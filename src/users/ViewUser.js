@@ -45,7 +45,7 @@ export default function ViewUser() {
               </li>
             </ul>
           </div>
-          <Link className='btn btn-danger my-2' to="/">Back to Home</Link>
+          <Link className='btn btn-danger my-2' to="/home">Back to Home</Link>
         </div>
       </div>
     </div>
