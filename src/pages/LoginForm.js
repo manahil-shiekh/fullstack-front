@@ -28,7 +28,8 @@ function LoginForm() {
         alert('Invalid credentials');
       }
     } catch (error) {
-      alert('Invalid credentials or server error');
+      console.log(error.response?.data || error.message);
+      alert(error.response?.data?.message || 'Invalid credentials or server error');
     } finally {
       setLoading(false);
     }
@@ -66,7 +67,9 @@ function LoginForm() {
             </div>
 
             <div className="mb-3 text-end">
-              <a href="/reset-password" className="text-decoration-none text-secondary small">Forgot Password?</a>
+              <a href="/reset-password" className="text-decoration-none text-secondary small">
+                Forgot Password?
+              </a>
             </div>
 
             <div className="d-grid">

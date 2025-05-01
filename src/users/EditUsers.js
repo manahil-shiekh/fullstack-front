@@ -99,7 +99,7 @@ export default function EditUsers() {
             </div>
 
             <div className="d-flex justify-content-between">
-              <button type="submit" className="btn btn-primary">Save</button>
+              <button type="submit" className="btn btn-primary" to="/home">Save</button>
               <Link type="button" className="btn btn-danger" to="/home">Cancel</Link>
             </div>
           </form>

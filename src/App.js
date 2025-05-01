@@ -6,6 +6,7 @@ import LoginForm from './pages/LoginForm';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddUsers from './users/AddUsers';
 import EditUsers from './users/EditUsers';
+import ResetPassword from './pages/ResetPassword'; 
 import ViewUser from './users/ViewUser';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LoginForm />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/home" element={<><Navbar /><Homes /></>} />
           <Route path="/adduser" element={<><Navbar /><AddUsers /></>} />
           <Route path="/edituser/:id" element={<><Navbar /><EditUsers /></>} />
