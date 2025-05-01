@@ -12,7 +12,7 @@ export default function AddUsers() {
     password: ''
   });
 
-  const { name, username, email, password } = user;
+  const { name, username, email, password, phone } = user;
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -20,9 +20,15 @@ export default function AddUsers() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    try {
+      // Make POST request to save user
       await axios.post("http://localhost:8080/user", user);
+      // After successful submission, navigate to the home page
       navigate("/");
-
+    } catch (error) {
+      console.error("Error submitting the form", error);
+      alert('There was an error saving the user. Please try again.');
+    }
   };
 
   return (
@@ -31,7 +37,7 @@ export default function AddUsers() {
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
           <h2 className="text-center mb-4">Register Yourself</h2>
 
-          <form onSubmit={(onSubmit)}>
+          <form onSubmit={onSubmit}>
             <div className="mb-3 text-start">
               <label htmlFor="name" className="form-label fw-bold">Full Name</label>
               <input
@@ -88,9 +94,25 @@ export default function AddUsers() {
               />
             </div>
 
+            <div className="mb-3 text-start">
+              <label htmlFor="phone" className="form-label fw-bold">Phone</label>
+              <input
+                type="text"
+                className="form-control"
+                id="phone"
+                name="phone"
+                placeholder="Enter number"
+                value={phone}
+                onChange={onInputChange}
+                required
+              />
+            </div>
+
             <div className="d-flex justify-content-between">
-              <button type="submit" className="btn btn-primary" to="/">Save</button>
-              <Link type="button" className="btn btn-danger" to="/">Cancel</Link>
+              {/* Submit button for saving user */}
+              <button type="submit" className="btn btn-primary">Save</button>
+              {/* Cancel button with Link */}
+              <Link className="btn btn-danger" to="/">Cancel</Link>
             </div>
           </form>
         </div>

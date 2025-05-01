@@ -33,6 +33,7 @@ export default function Homes() {
           <th scope="col">User Name</th>
           <th scope="col">Email</th>
           <th scope="col">Password</th>
+          <th scope="col">Phone</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -46,6 +47,7 @@ export default function Homes() {
                     <td>{user.username}</td>
                     <td>{user.email}</td>
                     <td>{user.password}</td>
+                    <td>{user.phone}</td>
                     <td>
                         <Link className='btn btn-primary mx-1' to={`/viewuser/${user.id}`}>view</Link>
                         <Link className='btn btn-outline-primary mx-1' to={`/edituser/${user.id}`}>Edit</Link>

@@ -10,10 +10,11 @@ export default function EditUsers() {
     name: '',
     username: '',
     email: '',
-    password: ''
+    password: '',
+    phone:''
   });
 
-  const { name, username, email, password } = user;
+  const { name, username, email, password,phone } = user;
 
   const onInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -93,6 +94,19 @@ export default function EditUsers() {
                 name="password"
                 placeholder="Enter password"
                 value={password}
+                onChange={onInputChange}
+                required
+              />
+            </div>
+            <div className="mb-3 text-start">
+              <label htmlFor="phone" className="form-label fw-bold">Phone</label>
+              <input
+                type="phone"
+                className="form-control"
+                id="phone"
+                name="phone"
+                placeholder="Enter phone"
+                value={phone}
                 onChange={onInputChange}
                 required
               />

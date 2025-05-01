@@ -7,7 +7,8 @@ export default function ViewUser() {
     name: '',
     username: '',
     email: '',
-    password: ''
+    password: '',
+    phone:''
   });
 
   const { id } = useParams();
@@ -42,6 +43,9 @@ export default function ViewUser() {
               </li>
               <li className='list-group-item'>
                 <b>Password:</b> {user.password}
+              </li>
+              <li className='list-group-item'>
+                <b>Phone:</b> {user.phone}
               </li>
             </ul>
           </div>
